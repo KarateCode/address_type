@@ -1,0 +1,9 @@
+--- 
+state_00001: 
+  name: Michigan
+  country_id: 1
+  id: 1
+state_00002: 
+  name: Alabama
+  country_id: 1
+  id: 2

@@ -1,0 +1,2 @@
+A lightweight generator for addressing.
+Yet it also takes advantage of rails single-table-inheritance to allow for multiple address types.

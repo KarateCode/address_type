@@ -1,0 +1,28 @@
+<% f = form %>
+<p>
+  <%= f.label :address1 %><br />
+  <%= f.text_field :line1 %>
+</p>
+<p>
+  <%= f.label :address2 %><br />
+  <%= f.text_field :line2 %>
+</p>
+<p>
+  <%= f.label :city %><br />
+  <%= f.text_field :city %>
+</p>
+<p>
+  <%= f.label :country %><br />
+  <%= f.collection_select :country, Country.all, :name, :name, :prompt => "Select a Country" 
+  %>
+</p>
+<p id="state_field">
+  <%= f.label :state %><br />
+  <%= render :partial=>'addresses/states', :object=>@states %>
+</p>
+<p>
+  <%= f.label :zip %><br />
+  <%= f.text_field :zip %>
+</p>
+
+<%= observe_field :address_country, :url=>{:controller => 'addresses', :action=>'get_states'}, :with => "'country_name=' + $('address_country').value" %>

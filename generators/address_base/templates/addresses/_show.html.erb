@@ -1,0 +1,8 @@
+<div class="accountline"> <span class="accountlabel">Address1:</span><span class="accountinfo"><%=h show.line1 %>  </span></div>
+<div class="accountline2"><span class="accountlabel">Address2:</span><span class="accountinfo"><%=h show.line2 %>  </span></div>
+<div class="accountline"> <span class="accountlabel">City:    </span><span class="accountinfo"><%=h show.city %>   </span></div>
+<div class="accountline2"><span class="accountlabel">State:   </span><span class="accountinfo"><%=h show.state %>  </span></div>
+<div class="accountline"> <span class="accountlabel">Zip:     </span><span class="accountinfo"><%=h show.zip %>    </span></div>
+<div class="accountline"> <span class="accountlabel">Country: </span><span class="accountinfo"><%=h show.country %></span></div>
+
+<%= link_to 'Edit', edit_address_path(@address) %>

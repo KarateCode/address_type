@@ -1,0 +1,3 @@
+route resource needs a :controller=>'addresses'
+migrations for country and state
+models for ''

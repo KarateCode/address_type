@@ -1,0 +1,19 @@
+Description:
+  This is the base generator for the plugin 'address_type'.  Only run this once.  It is
+  basically a scaffold generator for address.  It provides the base class that all
+  dynamically generated address_types will inherit from.
+
+Example:
+    ./script/generate address_base
+
+    This will create :
+        Controller: app/controllers/addresses_controller.rb
+        Model:      app/models/account.rb
+        Views:      app/views
+                        edit.html.erb
+                        show.html.erb
+                        index.html.erb
+                        new.html.erb
+        Spec:   
+        Fixtures:
+        Migration:

@@ -1,0 +1,40 @@
+Description:
+  This is where the magic happens.  This generator will make a new model that will take advantage
+  of rails built-in single table inheritance mechanism.  This is quite ideal because the the fields
+  and functionality of the model 'address' is inherited, while every new model can have its own 
+  relationships.  A line will also be added to routes that makes your site look and feel like it 
+  has a new controller, although it is really funneling through the generic addresses controller.
+  This is advantageous on two levels: your site now has new webpages devoted to CRUDing that data, 
+  but you don't have a bazillion new files cluttering up your project.
+  
+  
+  
+  For example, if you wanted a user to have only one billing, but multiple shipping 
+  addresses:
+  
+  # ruby script/generate address_type billing
+  # ruby script/generate address_type shipping
+  
+    # app/models/billing.rb
+    class Billing < Address
+      belongs_to :user
+    end
+
+    # app/models/shipping.rb
+    class Shipping < Address
+      belongs_to :user
+    end
+    
+    # app/models/user.rb
+    class User < ActiveRecord::Base
+      has_one :billing
+      has_many :shipping
+    end
+    
+
+Example:
+    ./script/generate address_type billing
+
+    This will create :
+        Routes: routes.rb: map.resources 'billing_addresses', :controller => 'addresses'
+        Model:  app/models/billing.rb

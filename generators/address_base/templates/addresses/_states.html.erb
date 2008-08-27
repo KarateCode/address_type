@@ -1,0 +1,5 @@
+<% if states.nil? || states.length.zero? %>
+  <%= text_field :address, :state %>
+<% else %>
+  <%= collection_select :address, :state, states, :name, :name, :prompt => "Choose state" %>
+<% end %>

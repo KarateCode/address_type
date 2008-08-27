@@ -1,0 +1,5 @@
+<h1>Shipping Address</h1>
+
+<% form_for( :address, :url=>{:controller=>'addresses', :action=>'update_shipping_from_purchase', :id=>@address.id}, :html=>{:method=>:put} ) do |f| %>
+  <%= render :partial=>'edit', :object=>f %>
+<% end %>
