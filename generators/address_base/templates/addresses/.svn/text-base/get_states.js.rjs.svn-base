@@ -1,1 +1,0 @@
-page.replace :address_state, {:partial=>'addresses/states', :object=>@states}

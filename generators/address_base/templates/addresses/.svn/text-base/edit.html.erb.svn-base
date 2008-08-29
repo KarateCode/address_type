@@ -1,6 +1,0 @@
-<h1>Editing address</h1>
-<%= render :partial => 'layouts/dashboard_menu' unless @paying %>
-
-<% form_for( :address, :url=>address_path(@address.id), :html=>{:method=>:put} ) do |f| %>
-  <%= render :partial=>'edit', :object=>f %>
-<% end %>

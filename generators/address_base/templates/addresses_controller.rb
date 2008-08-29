@@ -157,7 +157,7 @@ class AddressesController < ApplicationController
   
   private
   def address_type  # I should almost name this function model_name or sub_address_type or something...
-    dynamic_type = request.env['PATH_INFO'].split("/").reject(&:empty?).first.split("_").first.capitalize
+    dynamic_type = request.env['PATH_INFO'].split("/").reject(&:empty?).first.chomp("addresses").titleize.delete(" ")
     dynamic_type = "Address" if dynamic_type=="Addresses"
     return dynamic_type
   end
